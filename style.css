@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.title {
+    margin-top: 24px;
+    padding: 16px
+}
+
+.container {
+    padding: 16px;
+}
+
+#posts {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+.post {
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    font-size: 24px;
+    margin: 16px;
+    padding: 16px;
+    width: calc((100% - (16px * 6)) / 3);
+}

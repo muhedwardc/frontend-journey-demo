@@ -4,38 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend Journey Demo: {JSON} Placholder</title>
+
+    <link rel="stylesheet" href="./style.css">
 </head>
-
-<style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-    }
-
-    .title {
-        margin-top: 24px;
-        padding: 16px
-    }
-
-    .container {
-        padding: 16px;
-    }
-
-    #posts {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 24px;
-    }
-
-    .post {
-        border: 1px solid #e7e7e7;
-        border-radius: 4px;
-        font-size: 24px;
-        margin: 16px;
-        padding: 16px;
-        width: calc((100% - (16px * 6)) / 3);
-    }
-</style>
 
 <body>
     <h1 class="title">{JSON} Placeholder</h1>
@@ -47,38 +18,5 @@
     <div id="posts"></div>
 </body>
 
-<script>
-function composePostElement(post) {
-    var el = document.createElement('div');
-    el.classList.add('post');
-    el.innerHTML = `
-        <h3>${post.id}</h3>
-        <p>${post.title}</p>
-    `;
-
-    return el;
-}
-
-function renderPosts(posts) {
-    var postsContainer = document.getElementById('posts');
-
-    posts.forEach(post => {
-        var postElement = composePostElement(post);
-        postsContainer.appendChild(postElement);
-    });
-}
-
-function getPosts() {
-    var postsContainer = document.getElementById('posts');
-    postsContainer.innerHTML = '';
-
-    fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(res => res.json())
-        .then(posts => {
-            renderPosts(posts);
-        })
-}
-
-window.addEventListener('load', getPosts);
-</script>
+<script src="./script.js"></script>
 </html>
